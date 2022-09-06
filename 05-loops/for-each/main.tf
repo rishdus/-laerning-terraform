@@ -12,9 +12,9 @@
 //}
 
 resource "aws_instance" "web" {
-  for_each = var.sample 
+  for_each = var.sample
   ami           = "ami-0f0d5d950bc2520f0"
-  instance_type = "t3.micro"
+  instance_type = each.value
   tags = {
     Name = each.key
   }
@@ -22,13 +22,7 @@ resource "aws_instance" "web" {
 
 variable "sample" {
   default = {
-    one = {
-      name           = "one",
-      instancce_type = "t3.micro"
-    },
-    two = {
-      name           = "two",
-      instancce_type = "t3.medium"
-        }
+    one = "t3.micro"
+    two = "t3.medium"
   }
 }
