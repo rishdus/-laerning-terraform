@@ -18,7 +18,7 @@ output "test2" {
   value = var.test2
 }
 
-variable "test" {}
+variable "test3" {}
 
 output "test3" {
   value = var.test3
