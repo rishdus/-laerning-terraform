@@ -17,4 +17,5 @@ variable "sample" {
       type = "t3.medium"
       name = " "
     }
+  }
 }
