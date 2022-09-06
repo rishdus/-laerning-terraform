@@ -3,5 +3,5 @@ module "test" {
 }
 
 module "test1" {
-  source = "./test1"
+  source = "./test"
 }
