@@ -1,6 +1,7 @@
 resource "aws_security_group" "web" {
   name        = "web"
   description = "web"
+  vpc_id = "vpc-05234256c7c995a9b"
 
   ingress {
     description      = "SSH"
