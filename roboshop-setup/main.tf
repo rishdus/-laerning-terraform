@@ -19,6 +19,9 @@ resource "aws_route53_record" "record" {
 }
 
 resource "null_resource" "ansible-apply" {
+  triggers = {
+    abc =timestamp()
+  }
   count = length(var.components)
   provisioner "remote-exec" {
 
