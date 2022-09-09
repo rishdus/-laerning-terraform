@@ -34,7 +34,7 @@ resource "null_resource" "ansible-apply" {
 
     inline = [
       "sudo labauto clean",
-      "ansible-pull -i localhost, -U https://github.com/rishdus/roboshop-mutable-ansible roboshop.yml -e HOSTS=localhost -e APP_COMPONENT_ROLE=${var.components[count.index]} -e ENV=dev"
+      "ansible-pull -i localhost, -U https://github.com/rishdus/roboshop-mutable-ansible.git roboshop.yml -e HOSTS=localhost -e APP_COMPONENT_ROLE=${var.components[count.index]} -e ENV=dev"
     ]
 
   }
