@@ -6,7 +6,7 @@ resource "aws_instance" "web" {
   provisioner "remote-exec" {
     connection {
       host = self.public_ip
-      username = "root"
+      user = "root"
       password = "DevOps321"
           }
     inline = [
