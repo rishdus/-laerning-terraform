@@ -10,7 +10,7 @@ resource "aws_instance" "app" {
 resource "aws_route53_record" "record" {
   count = length(var.components)
   zone_id = "Z095677034JZB3ZMFYPOS"
-  name    = var.components[count.index]
+  name    = "${var.components["${count.index}"]}-dev"
   type    = "A"
   ttl     = 30
   records = [aws_instance.app.*.private_ip[count.index]]
