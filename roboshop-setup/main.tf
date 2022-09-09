@@ -26,7 +26,7 @@ resource "null_resource" "ansible-apply" {
   provisioner "remote-exec" {
 
     connection {
-      host = aws_instance.app*.public_ip[count.index]
+      host = aws_instance.app.*.public_ip[count.index]
       user = "root"
       password = "DevOps321"
     }
